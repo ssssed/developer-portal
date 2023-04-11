@@ -1,0 +1,62 @@
+@import "../../utils/variable.scss";
+
+.recomended-theme {
+  width: 100%;
+  display: flex;
+  gap: 106px;
+  align-items: center;
+  padding: 32px 106px;
+  box-shadow: $shadow-group;
+  background-color: $bg-default;
+  border-radius: 8px;
+
+  &__img {
+    width: 154px;
+    height: 154px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__button {
+    max-width: 181px; // FIXME: когда импортирую нормальный шрифт заменить на 171
+    border-radius: 4px;
+    width: 100%;
+    background-color: $control-primary-bg;
+    color: white;
+    margin-top: 27px;
+    padding: 0 20px;
+    border: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 40px;
+  }
+
+  &__title {
+    font-size: 32px;
+    line-height: 150%;
+    font-weight: 400;
+  }
+
+  &__list {
+    display: flex;
+    gap: 20px;
+    color: $typo-secondary;
+
+    &-item {
+      font-size: 14px;
+      line-height: 150%;
+      &:first-child {
+        list-style-type: none;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
