@@ -4,7 +4,7 @@ import "./RecomendedTheme.scss";
 const RecomendedTheme = () => {
   return (
     <div className="recomended-theme">
-      <ProgressBar percent={8} />
+      <ProgressBar progress={8} totalTasks={10} />
       <div className="recomended-theme__content">
         <h3 className="recomended-theme__title">Начало работы</h3>
         <ul className="recomended-theme__list">

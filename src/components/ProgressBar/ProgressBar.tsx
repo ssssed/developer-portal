@@ -1,56 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ProgressBar.scss";
 
-type ProgressBarProps = {
-  percent: number;
-};
+interface ProgressBarProps {
+  progress: number;
+  size?: number;
+  thickness?: number;
+  totalTasks: number;
+}
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ percent }) => {
-  const strokeWidth = 16;
-  const radius = 85 - strokeWidth / 2;
-  const normalizedRadius = radius - strokeWidth / 2;
-  const circumference = normalizedRadius * 2 * Math.PI;
-  const strokeDashoffset = circumference - (percent / 10) * circumference;
+const ProgressBar: React.FC<ProgressBarProps> = ({
+  progress,
+  size = 160,
+  thickness = 16,
+  totalTasks,
+}) => {
+  const [offset, setOffset] = useState<number>(0);
+
+  useEffect(() => {
+    const progressOffset = ((totalTasks - progress) / totalTasks) * 502;
+    setOffset(progressOffset);
+  }, [setOffset, progress, totalTasks]);
+
+  const radius = (size - thickness) / 2;
+  const circumference = radius * 2 * Math.PI;
 
   return (
-    <svg width="154" height="154">
+    <svg
+      className="progress-bar"
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
+    >
       <circle
-        className="progress-bar__background"
-        stroke="rgba(0, 32, 51, 0.08)"
-        strokeWidth={strokeWidth}
-        fill="transparent"
-        r={normalizedRadius}
-        cx="77"
-        cy="77"
+        className="progress-bar-bg"
+        cx={size / 2}
+        cy={size / 2}
+        r={radius}
+        strokeWidth={`${thickness}px`}
       />
       <circle
-        className="progress-bar__foreground"
-        stroke="#24C38E"
-        strokeWidth={strokeWidth}
-        strokeDasharray={`${circumference} ${circumference}`}
-        style={{ strokeDashoffset }}
-        fill="transparent"
-        r={normalizedRadius}
-        cx="77"
-        cy="77"
+        className="progress-bar-fg"
+        cx={size / 2}
+        cy={size / 2}
+        r={radius}
+        strokeWidth={`${thickness}px`}
+        strokeDasharray={`${circumference}px ${circumference}px`}
+        strokeDashoffset={`${offset}px`}
+        strokeLinecap="butt"
       />
       <text
-        className="progress-bar__label"
+        className="progress-bar-text font2XL"
         x="50%"
-        y="40%"
+        y="50%"
         textAnchor="middle"
-        dy="0.3em"
+        dominantBaseline="middle"
       >
-        {percent}/10
-      </text>
-      <text
-        className="progress-bar__subtitle"
-        x="50%"
-        y="60%"
-        textAnchor="middle"
-        dy="0.3em"
-      >
-        заданий
+        {progress}/{totalTasks}
+        <tspan
+          dy="1.2em"
+          x="50%"
+          dominantBaseline="middle"
+          className="progress-bar-secondary-text fontS"
+        >
+          заданий
+        </tspan>
       </text>
     </svg>
   );

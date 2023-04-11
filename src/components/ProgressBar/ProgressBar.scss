@@ -1,29 +1,28 @@
 @import "../../utils/variable.scss";
 
-.progress-bar__background {
-  width: 154px;
-  height: 154px;
+.progress-bar {
+  display: block;
+  min-width: 160px;
+}
+
+.progress-bar-bg {
+  fill: none;
+  stroke: $bg-ghost;
+}
+
+.progress-bar-fg {
+  fill: none;
+  stroke: $bg-success;
+  stroke-linecap: butt;
   transform: rotate(-90deg);
-  transform-origin: 50% 50%;
+  transform-origin: center;
+  transition: stroke-dashoffset 0.5s ease-in-out;
 }
 
-.progress-bar__foreground {
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-  transition: stroke-dashoffset 0.5s ease-out;
+.progress-bar-text {
+  fill: $typo-primary;
 }
 
-.progress-bar__label {
-  color: $typo-primary;
-  line-height: 150%;
-  font-size: 24px;
-  text-anchor: middle;
-  dominant-baseline: middle;
-  fill: #333;
-}
-
-.progress-bar__subtitle {
-  color: $typo-secondary;
-  font-size: 14px;
-  line-height: 150%;
+.progress-bar-secondary-text {
+  fill: $typo-secondary;
 }
