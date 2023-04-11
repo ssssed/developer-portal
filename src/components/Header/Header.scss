@@ -1,0 +1,66 @@
+.header {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 18px 24px;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 65, 102, 0.2);
+
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #002033;
+    user-select: none;
+  }
+
+  &__nav {
+    margin-left: 36px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    user-select: none;
+
+    &-link {
+      font-size: 16px;
+      color: rgba(0, 32, 51, 0.6);
+    }
+  }
+
+  &__menu {
+    display: flex;
+    gap: 25px;
+    margin-left: auto;
+    margin-right: 28px;
+
+    &-item {
+      cursor: pointer;
+    }
+  }
+
+  &__auth {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &-logo {
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    &-name {
+      font-size: 16px;
+      color: #002033;
+      line-height: 100%;
+    }
+  }
+}
+
+.active {
+  line-height: 58px;
+  color: #002033;
+  border-bottom: 2px solid #0078d2;
+}
