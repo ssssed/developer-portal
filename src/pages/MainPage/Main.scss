@@ -1,0 +1,15 @@
+@import "../../utils/variable.scss";
+
+.main {
+  height: calc(100vh - 60px);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px 96px;
+
+  &__title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    padding-bottom: 24px;
+  }
+}

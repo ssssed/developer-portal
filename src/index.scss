@@ -1,0 +1,22 @@
+@import "./utils/variable.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $main-background;
+  font-weight: 400;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+a {
+  cursor: pointer;
+}
