@@ -1,0 +1,35 @@
+@import "../../utils/variable.scss";
+
+.recomended {
+  &__title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    padding-bottom: 24px;
+  }
+}
+
+.show-more {
+  display: flex;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 40px;
+  gap: 14px;
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid $bg-border;
+  }
+
+  &__button {
+    background-color: $control-ghost-bg;
+    color: $control-ghost-typo;
+    border: 0;
+    font-size: 14px;
+    line-height: 32px;
+    padding: 0 10px 0 16px;
+    max-width: 140px;
+    width: 100%;
+  }
+}
