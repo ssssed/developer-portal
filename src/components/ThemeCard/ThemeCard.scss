@@ -1,0 +1,58 @@
+@import "../../utils/variable.scss";
+
+.theme-card {
+  background-color: $bg-default;
+  border-radius: 8px;
+  box-shadow: $shadow-group;
+  max-width: 400px;
+  width: 100%;
+
+  &__content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+  }
+
+  &__status-bar {
+    padding-top: 28px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    background-color: $control-primary-bg;
+    border-radius: 4px;
+    color: white;
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 40px;
+  }
+
+  &__categoryes {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  &__category {
+    font-size: 14px;
+    line-height: 150%;
+    color: $typo-secondary;
+
+    &:first-child {
+      list-style-type: none;
+    }
+  }
+}

@@ -1,11 +1,12 @@
-import RecomendedTheme from "../../components/RecomendedTheme/RecomendedTheme";
+import FrontendWay from "../../components/FrontendWay/FrontendWay";
+import RecomendedSection from "../../components/RecomendedSection/RecomendedSection";
 import "./Main.scss";
 
 const Main = () => {
   return (
     <main className="main">
-      <h2 className="main__title">Рекомендуемые темы</h2>
-      <RecomendedTheme />
+      <RecomendedSection />
+      <FrontendWay />
     </main>
   );
 };
