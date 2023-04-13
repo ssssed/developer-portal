@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { IThemeCard } from "../../types";
+import ProgressBar from "../ProgressBar/ProgressBar";
 import "./ThemeCard.scss";
 
 const ThemeCard: FC<IThemeCard> = ({
@@ -23,7 +24,14 @@ const ThemeCard: FC<IThemeCard> = ({
         <p className="theme-card__text">{text}</p>
         <div className="theme-card__status-bar">
           <button className="theme-card__button">Начать</button>
-          <div>status</div>
+          <div>
+            <ProgressBar
+              type="small"
+              totalTasks={countTask}
+              progress={countCompletedTask}
+              size={25}
+            />
+          </div>
         </div>
       </div>
     </div>

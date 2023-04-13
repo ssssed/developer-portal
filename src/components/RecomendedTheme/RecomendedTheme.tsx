@@ -1,5 +1,7 @@
 import ProgressBar from "../ProgressBar/ProgressBar";
 import "./RecomendedTheme.scss";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 const RecomendedTheme = () => {
   return (

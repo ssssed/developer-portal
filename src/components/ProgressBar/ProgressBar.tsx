@@ -1,71 +1,55 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./ProgressBar.scss";
+import done from "../../assets/done.svg";
+import {
+  CircularProgressbar,
+  CircularProgressbarWithChildren,
+} from "react-circular-progressbar";
 
 interface ProgressBarProps {
   progress: number;
   size?: number;
-  thickness?: number;
   totalTasks: number;
+  type?: "small" | "normal";
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({
   progress,
   size = 160,
-  thickness = 16,
   totalTasks,
+  type = "normal",
 }) => {
-  const [offset, setOffset] = useState<number>(0);
+  if (totalTasks === progress)
+    return <img src={done} width={size} height={size} alt="done" />;
 
-  useEffect(() => {
-    const progressOffset = ((totalTasks - progress) / totalTasks) * 502;
-    setOffset(progressOffset);
-  }, [setOffset, progress, totalTasks]);
-
-  const radius = (size - thickness) / 2;
-  const circumference = radius * 2 * Math.PI;
+  if (type === "small") {
+    return (
+      <div className="progress-bar">
+        <span className="progress-bar__text_small">
+          {progress !== 0 && progress + "/"}
+          {totalTasks}
+        </span>
+        <span className="progress-bar__secondary-text">заданий</span>
+        <div style={{ width: size, height: size }}>
+          <CircularProgressbar value={progress * 10} />
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <svg
-      className="progress-bar"
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
-    >
-      <circle
-        className="progress-bar-bg"
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        strokeWidth={`${thickness}px`}
-      />
-      <circle
-        className="progress-bar-fg"
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        strokeWidth={`${thickness}px`}
-        strokeDasharray={`${circumference}px ${circumference}px`}
-        strokeDashoffset={`${offset}px`}
-        strokeLinecap="butt"
-      />
-      <text
-        className="progress-bar-text font2XL"
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dominantBaseline="middle"
-      >
-        {progress}/{totalTasks}
-        <tspan
-          dy="1.2em"
-          x="50%"
-          dominantBaseline="middle"
-          className="progress-bar-secondary-text fontS"
-        >
-          заданий
-        </tspan>
-      </text>
-    </svg>
+    <div style={{ width: size, height: size }}>
+      <CircularProgressbarWithChildren value={progress * 10}>
+        {type === "normal" && (
+          <React.Fragment>
+            <span className="progress-bar__text">
+              {progress}/{totalTasks}
+            </span>
+            <span className="progress-bar__secondary-text">заданий</span>
+          </React.Fragment>
+        )}
+      </CircularProgressbarWithChildren>
+    </div>
   );
 };
 
