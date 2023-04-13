@@ -1,0 +1,23 @@
+@import "../../utils/variable.scss";
+
+.theme-button {
+  background-color: $control-primary-bg;
+  border-radius: 4px;
+  color: white;
+  padding: 0 20px;
+  font-size: 16px;
+  line-height: 40px;
+
+  &-again {
+    align-items: center;
+    background-color: transparent;
+    padding: 0 20px 0 16px;
+    display: flex;
+    gap: 10px;
+    border: 1px solid #0078d2;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 40px;
+    color: #0078d2;
+  }
+}

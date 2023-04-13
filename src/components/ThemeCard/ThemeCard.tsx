@@ -1,6 +1,7 @@
-import { FC } from "react";
+import { FC, useMemo, useState } from "react";
 import { IThemeCard } from "../../types";
 import ProgressBar from "../ProgressBar/ProgressBar";
+import ThemeButton from "../ThemeButton/ThemeButton";
 import "./ThemeCard.scss";
 
 const ThemeCard: FC<IThemeCard> = ({
@@ -10,6 +11,19 @@ const ThemeCard: FC<IThemeCard> = ({
   countCompletedTask,
   text,
 }) => {
+  const [buttonClass, setButtonClass] = useState<"reload" | "default">(
+    "default"
+  );
+  const buttonText = useMemo(() => {
+    if (countCompletedTask === countTask) {
+      setButtonClass("reload");
+      return "Пройти заново";
+    }
+    setButtonClass("default");
+    if (countCompletedTask >= 1) return "Продолжить тему";
+    return "Начать";
+  }, [countTask, countCompletedTask]);
+
   return (
     <div className="theme-card">
       <div className="theme-card__content">
@@ -23,7 +37,7 @@ const ThemeCard: FC<IThemeCard> = ({
         </ul>
         <p className="theme-card__text">{text}</p>
         <div className="theme-card__status-bar">
-          <button className="theme-card__button">Начать</button>
+          <ThemeButton type={buttonClass}>{buttonText}</ThemeButton>
           <ProgressBar
             type="small"
             totalTasks={countTask}
