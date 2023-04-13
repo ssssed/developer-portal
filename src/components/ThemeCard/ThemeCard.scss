@@ -4,7 +4,8 @@
   background-color: $bg-default;
   border-radius: 8px;
   box-shadow: $shadow-group;
-  max-width: 400px;
+  min-width: 0;
+  max-width: 464px;
   width: 100%;
 
   &__content {

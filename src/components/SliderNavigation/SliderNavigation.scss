@@ -1,0 +1,28 @@
+@import "../../utils/variable.scss";
+
+.navigation {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+
+  &__button {
+    background-color: $control-ghost-bg;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 0;
+
+    &-right {
+      background-image: url("../../assets/icon-backward.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      rotate: 180deg;
+    }
+
+    &-left {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("../../assets/icon-backward.svg");
+    }
+  }
+}
