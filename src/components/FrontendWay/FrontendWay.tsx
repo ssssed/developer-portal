@@ -6,17 +6,27 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper.min.css";
 import SliderNavigation from "../SliderNavigation/SliderNavigation";
+import { useAppDispatch, useAppSelector } from "../../hook/redux-toolkit";
+import { toggleHiddenStatus } from "../../store/courceSlice";
 
 SwiperCore.use([Navigation]);
 
 const FrontendWay = () => {
+  const dispatch = useAppDispatch();
+
   const [swiper, setSwiper] = useState<SwiperCore>(null);
 
+  // const [isHidden, setHidden] = useState<boolean>(false);
+  const { courcesWay, isHidden } = useAppSelector((state) => state.cource);
+
+  const handleHiddenCards = () => dispatch(toggleHiddenStatus(!isHidden));
   return (
     <section className="frontend-way">
       <div className="frontend-way__info-bar">
         <h2 className="frontend-way__title">путь front end developer</h2>
-        <button className="frontend-way__button">Скрыть пройденые</button>
+        <button className="frontend-way__button" onClick={handleHiddenCards}>
+          {isHidden ? "Показать" : "Скрыть"} пройденые
+        </button>
         <SliderNavigation swiper={swiper} />
       </div>
       <Swiper
@@ -40,7 +50,7 @@ const FrontendWay = () => {
         spaceBetween={24}
         wrapperClass="theme-cards"
       >
-        {cards.map((card) => (
+        {courcesWay.map((card) => (
           <SwiperSlide key={card.title}>
             <ThemeCard {...card} />
           </SwiperSlide>
