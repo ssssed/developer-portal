@@ -30,9 +30,11 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
           {totalTasks}
         </span>
         <span className="progress-bar__secondary-text">заданий</span>
-        <div style={{ width: size, height: size }}>
-          <CircularProgressbar value={progress * 10} />
-        </div>
+        {progress !== 0 && (
+          <div style={{ width: size, height: size }}>
+            <CircularProgressbar value={progress * 10} />
+          </div>
+        )}
       </div>
     );
   }
