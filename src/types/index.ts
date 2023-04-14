@@ -5,3 +5,10 @@ export interface IThemeCard {
   countTask: number;
   countCompletedTask: number;
 }
+
+export type FilteredCategory =
+  | "Все"
+  | "Рабочая среда"
+  | "Библиотеки"
+  | "Пройденные"
+  | "Не пройденные";

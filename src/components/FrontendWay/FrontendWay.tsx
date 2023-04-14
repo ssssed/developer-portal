@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./FrontendWay.scss";
-import { cards } from "../../utils/theme-cards.static";
 import ThemeCard from "../ThemeCard/ThemeCard";
 import { SwiperSlide, Swiper } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
@@ -16,7 +15,6 @@ const FrontendWay = () => {
 
   const [swiper, setSwiper] = useState<SwiperCore>(null);
 
-  // const [isHidden, setHidden] = useState<boolean>(false);
   const { courcesWay, isHidden } = useAppSelector((state) => state.cource);
 
   const handleHiddenCards = () => dispatch(toggleHiddenStatus(!isHidden));
@@ -50,8 +48,8 @@ const FrontendWay = () => {
         spaceBetween={24}
         wrapperClass="theme-cards"
       >
-        {courcesWay.map((card) => (
-          <SwiperSlide key={card.title}>
+        {courcesWay.map((card, index) => (
+          <SwiperSlide key={card.title + index}>
             <ThemeCard {...card} />
           </SwiperSlide>
         ))}

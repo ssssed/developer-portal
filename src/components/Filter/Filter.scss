@@ -1,0 +1,39 @@
+@import "../../utils/variable.scss";
+
+.filter {
+  display: flex;
+  border: 1px solid $control-default-bg-border;
+  border-radius: 4px;
+  gap: 0;
+  max-width: 666px;
+  width: 100%;
+  height: 40px;
+
+  &__button {
+    margin: 9.5px 0;
+    font-size: 16px;
+    line-height: 21px;
+    white-space: nowrap;
+    padding: 0 20px;
+    border-right: 1px solid $control-default-bg-border;
+    color: $control-default-typo;
+    background-color: transparent;
+
+    &:last-child {
+      border: 0;
+    }
+
+    &:nth-child(-1) {
+      border: 0;
+    }
+
+    &_active {
+      margin: 0;
+      padding: 9.5px 20px;
+      border: 0;
+      border-radius: 4px;
+      color: $control-ghost-typo;
+      background-color: $control-ghost-bg;
+    }
+  }
+}
