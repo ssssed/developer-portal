@@ -22,4 +22,25 @@ export const cards: IThemeCard[] = [
     countTask: 10,
     countCompletedTask: 0,
   },
+  {
+    title: "Работа с библиотеками GPN",
+    categoryes: ["Профессионалу", "Библиотеки"],
+    text: "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
+    countTask: 255,
+    countCompletedTask: 0,
+  },
+  {
+    title: "Введение в рабочую среду",
+    categoryes: ["Профессионалу", "Библиотеки"],
+    text: "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
+    countTask: 10,
+    countCompletedTask: 0,
+  },
+  {
+    title: "Практика с рабочей средой",
+    categoryes: ["Профессионалу", "Рабочая среда"],
+    text: "Познакомьтесь ближе с компанией и узнайте больше о том, что вы делаете",
+    countTask: 10,
+    countCompletedTask: 0,
+  },
 ];
