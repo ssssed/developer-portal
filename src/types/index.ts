@@ -12,3 +12,11 @@ export type FilteredCategory =
   | "Библиотеки"
   | "Пройденные"
   | "Не пройденные";
+
+type Suggestion = {
+  data: { city: string };
+};
+
+export interface FetchGeolocate {
+  suggestions: Suggestion[];
+}
