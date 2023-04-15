@@ -20,21 +20,4 @@ class Api {
   }
 }
 
-// const url =
-//   "https://suggestions.dadata.ru/suggestions/api/4_1/rs/geolocate/address";
-// const token = import.meta.env.VITE_API_TOKEN;
-//
-// const query = { lat, lon };
-//
-// const options = {
-//   method: "POST",
-//   mode: "cors",
-//   headers: {
-//     "Content-Type": "application/json",
-//     Accept: "application/json",
-//     Authorization: "Token " + token,
-//   },
-//   body: JSON.stringify(query),
-// };
-
 export default new Api();
