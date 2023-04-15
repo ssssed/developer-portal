@@ -4,8 +4,10 @@ import questionIcon from "../../assets/question.svg";
 import themeIcon from "../../assets/theme.svg";
 import avatar from "../../assets/avatar.svg";
 import { NavLink } from "react-router-dom";
+import { useGeolocate } from "../../hook/useGeolocate";
 
 const Header = () => {
+  const geolocate = useGeolocate();
   return (
     <header className="header">
       <h1 className="header__title">Портал Разработчика</h1>
@@ -18,6 +20,7 @@ const Header = () => {
         </NavLink>
       </nav>
       <div className="header__menu">
+        {geolocate && <span className="header__city">г. {geolocate}</span>}
         <img className="header__menu-item" src={bellIcon} alt="bell" />
         <img className="header__menu-item" src={questionIcon} alt="faq" />
         <img className="header__menu-item" src={themeIcon} alt="theme icon" />
