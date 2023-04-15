@@ -29,7 +29,7 @@ const courceSlice = createSlice({
       state.isHidden = action.payload;
       if (state.isHidden)
         state.courcesWay = state.cources.filter(
-          (cource) => cource.countCompletedTask === cource.countTask
+          (cource) => cource.countCompletedTask !== cource.countTask
         );
       else state.courcesWay = state.cources;
     },
