@@ -33,9 +33,13 @@ const SearchPage = () => {
 
   return (
     <main className="search-page">
+      <h2 className="search-page__title">Поиск информации о компании</h2>
       <PartySuggestions
         token={import.meta.env.VITE_API_TOKEN}
         value={selected}
+        inputProps={{
+          placeholder: "Поиск Компаний",
+        }}
         onChange={handleSelectedChange}
       />
       {selected && (
