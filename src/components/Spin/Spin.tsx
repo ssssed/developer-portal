@@ -6,7 +6,6 @@ const Spin = () => {
     <div className="spin">
       <div className="spin__container rotate">
         <svg
-          className="loading"
           aria-hidden="true"
           focusable="false"
           role="presentation"
