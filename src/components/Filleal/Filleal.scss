@@ -1,0 +1,16 @@
+@import "../../utils/variable.scss";
+
+.filleal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid $bg-border;
+  padding: 14px;
+  max-width: 400px;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: $shadow-group;
+  background-color: $bg-default;
+}
