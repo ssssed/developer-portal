@@ -18,6 +18,9 @@ const Header = () => {
         <NavLink to="/tasks" className="header__nav-link">
           Задачи
         </NavLink>
+        <NavLink to="/search" className="header__nav-link">
+          Поиск
+        </NavLink>
       </nav>
       <div className="header__menu">
         {geolocate && <span className="header__city">г. {geolocate}</span>}
