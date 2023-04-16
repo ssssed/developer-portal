@@ -7,8 +7,6 @@ class Api {
   };
   private API_TOKEN: string = import.meta.env.VITE_API_TOKEN;
 
-  public async get<T>(url: string): Promise<T> {}
-
   public async post<T>(url: string, data: object): Promise<T> {
     const response = await fetch(`${this.baseUrl}/${url}`, {
       method: "POST",
