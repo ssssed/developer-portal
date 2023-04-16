@@ -3,10 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://ssssed.github.io/developer-portal",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "yarn build",
+    "deploy": "gh-page -d build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
@@ -22,6 +25,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
+    "gh-pages": "^5.0.0",
     "sass": "^1.61.0",
     "sass-loader": "^13.2.2",
     "typescript": "^4.9.3",
