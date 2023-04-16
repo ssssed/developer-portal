@@ -13,7 +13,7 @@ SwiperCore.use([Navigation]);
 const FrontendWay = () => {
   const dispatch = useAppDispatch();
 
-  const [swiper, setSwiper] = useState<SwiperCore>(null);
+  const [swiper, setSwiper] = useState<SwiperCore | null>(null);
 
   const { courcesWay, isHidden } = useAppSelector((state) => state.cource);
 

@@ -1,4 +1,5 @@
 import { DaDataParty, DaDataSuggestion } from "react-dadata";
+import Swiper from "swiper";
 
 export interface IThemeCard {
   title: string;
@@ -45,4 +46,8 @@ export interface IFilleal {
   status: string;
   registratonDate: number | null;
   onClick: () => void;
+}
+
+export interface ISliderNavigation {
+  swiper: Swiper | null;
 }

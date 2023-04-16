@@ -1,15 +1,10 @@
 import { FC } from "react";
-import Swiper from "swiper";
-import { useSwiper } from "swiper/react";
+import { ISliderNavigation } from "../../types";
 import "./SliderNavigation.scss";
 
-interface ISliderNavigation {
-  swiper: Swiper;
-}
-
 const SliderNavigation: FC<ISliderNavigation> = ({ swiper }) => {
-  const handleSwiperSlideNext = () => swiper.slideNext();
-  const handleSwiperSlidePrev = () => swiper.slidePrev();
+  const handleSwiperSlideNext = () => swiper?.slideNext();
+  const handleSwiperSlidePrev = () => swiper?.slidePrev();
   return (
     <div className="navigation">
       <button
