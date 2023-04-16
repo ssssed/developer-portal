@@ -1,25 +1,44 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
-import Main from "../pages/MainPage/Main";
-import SearchPage from "../pages/SearchPage/SearchPage";
-import Tasks from "../pages/TasksPage/Tasks";
+import { lazy, Suspense } from "react";
+import Spin from "../components/Spin/Spin";
+
+const Main = lazy(() => import("../pages/MainPage/Main"));
+const SearchPage = lazy(() => import("../pages/SearchPage/SearchPage"));
+const Tasks = lazy(() => import("../pages/TasksPage/Tasks"));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <Suspense fallback={<Spin />}>
+        <Layout />
+      </Suspense>
+    ),
     children: [
       {
         path: "/",
-        element: <Main />,
+        element: (
+          <Suspense fallback={<Spin />}>
+            <Main />
+          </Suspense>
+        ),
       },
       {
         path: "/tasks",
-        element: <Tasks />,
+        element: (
+          <Suspense fallback={<Spin />}>
+            <Tasks />
+          </Suspense>
+        ),
       },
       {
         path: "/search",
-        element: <SearchPage />,
+        element: (
+          <Suspense fallback={<Spin />}>
+            <SearchPage />
+          </Suspense>
+        ),
       },
     ],
   },

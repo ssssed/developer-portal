@@ -1,0 +1,24 @@
+.spin {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    margin-top: calc((100% - 200px) / 4);
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+}
+
+.rotate {
+  animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
